@@ -333,14 +333,13 @@ body {
   }
 }
 
-.maincontainer,
-.secondaryContainer {
+.maincontainer {
   height: 100%;
 
 }
 
 .billboard {
-  background-image: linear-gradient(180deg, rgb(0 0 0 / 0%) 10%, #b8191933);
+  background-image: linear-gradient(360deg, rgb(0 0 0 / 0%) 10%, #b8191933);
   height: 100%;
   padding: 76px 60px 32px;
 
@@ -478,4 +477,117 @@ body {
     min-height: calc(100% - 200px);
 
   }
+}
+
+.secondarycontainer {
+  height: 100%;
+  padding: 0 0 60px;
+}
+
+.movielist {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  h2 {
+    font-size: 21px;
+    font-weight: 600;
+    padding: 0 60px;
+  }
+
+  .movies-card-list {
+    position: relative;
+    overflow: scroll;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    .left-button,
+    .right-button {
+      position: absolute;
+      transition: 0.5s all ease-in-out;
+      height: 100%;
+
+      &:hover {
+        svg {
+
+          visibility: visible;
+          opacity: 1;
+          transition: 0.5s all ease-in-out;
+          background: #13131390;
+
+        }
+      }
+
+      svg {
+        visibility: hidden;
+        transition: 0.5s all ease-in-out;
+        opacity: 0;
+        height: 100%;
+      }
+    }
+
+    .left-button {
+      transform: rotate(180deg);
+      left: 0%;
+      z-index: 99;
+    }
+
+    .right-button {
+      z-index: 99;
+      right: 0%;
+    }
+  }
+
+
+  .moviecard-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 30px 0 50px;
+    gap: 30px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+
+}
+
+
+.moviecard {
+  .card-img {
+    width: 308px;
+    height: 173px;
+    transition: .3s;
+
+    &:hover {
+      transform: scale(1.32);
+      z-index: 999;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+
+    }
+  }
+
+
+}
+
+.moviecard-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+}
+
+.moviecard-wrapper::-webkit-scrollbar {
+  display: none;
 }
