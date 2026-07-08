@@ -31,6 +31,12 @@
     - Embedded the video and make it autoplay and mute
     - Tailwind classes to make our MainContainer look beautiful
     - Build SecondaryComponent
+    - Build Movie List
+    - Build Movie Card
+    - TMDB Img Url
+    - TMDB Img CDN URL
+    - Made the browser page amazing with Tailwind CSS
+    - usePopularMovies custom hook
 
 # Features
 
