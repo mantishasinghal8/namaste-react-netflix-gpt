@@ -8,9 +8,9 @@ import Body from "./components/Body";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
-    <Provider store={appStore}>
-      <Body />
-    </Provider>
-  </React.StrictMode>
+  //<React.StrictMode>
+  <Provider store={appStore}>
+    <Body />
+  </Provider>
+  //</React.StrictMode>
 );
