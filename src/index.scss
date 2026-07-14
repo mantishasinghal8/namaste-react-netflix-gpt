@@ -56,6 +56,10 @@ body {
       object-fit: contain;
     }
   }
+
+  .gpt-search {
+    font-weight: 600;
+  }
 }
 
 .login {
@@ -165,6 +169,13 @@ body {
 
     .header-wrapper {
       height: 100%;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 30px;
     }
   }
 
@@ -558,6 +569,17 @@ body {
 }
 
 
+.moviecard-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+
+  &:-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .moviecard {
   .card-img {
     width: 308px;
@@ -581,13 +603,130 @@ body {
 
 }
 
-.moviecard-wrapper {
+.gptsearch {
+
   display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding: 60px;
+  gap: 20px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 69%);
+  }
+
+
 }
 
-.moviecard-wrapper::-webkit-scrollbar {
-  display: none;
+.gptsearchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+
+  h1 {
+    font-size: 72px;
+    font-weight: 600;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="search"] {
+    width: 100%;
+    max-width: 800px;
+    min-width: 800px;
+    height: 50px;
+    border-radius: 80px 0 0 80px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: red;
+    font-weight: 600;
+    background: transparent;
+    background: rgb(0 0 0 / 54%);
+    border: 1px solid red;
+
+    &::placeholder {
+      color: red;
+      opacity: 0.5;
+    }
+  }
+
+  button {
+    width: 100%;
+    max-width: 100px;
+    min-width: 100px;
+    height: 50px;
+    border-radius: 0 80px 80px 0;
+    padding: 0 25px;
+    font-size: 18px;
+    color: red;
+    font-weight: 400;
+    background-color: #000;
+    border: 1px solid red;
+  }
+}
+
+.gptmoviesuggestion {
+  position: relative;
+  z-index: 1;
+}
+
+#gptLang {
+  width: 160px;
+  height: 42px;
+  padding: 0 40px 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #e50914;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s all ease-in-out;
+
+  /* Remove default arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom Arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5L8 12l6.5-6.5' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+#gptLang:hover {
+  transition: 0.3s all ease-in-out;
+  box-shadow: 0 0 6px rgba(229, 9, 20, 0.5);
+}
+
+#gptLang:focus {
+  transition: 0.3s all ease-in-out;
+  box-shadow: 0 0 6px rgba(229, 9, 20, 0.5);
+}
+
+/* Dropdown options */
+#gptLang option {
+  background: #111;
+  color: white;
+  font-size: 13px;
+  padding: 10px;
 }
