@@ -11,7 +11,7 @@ export const LOGO_N = "https://occ-0-2991-3646.1.nflxso.net/dnm/api/v6/1yqKxSrpV
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
 export const API_OPTIONS = {
     method: 'GET',
-    headers: { accept: 'application/json', Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNzhkOGVlNjFhNjc4MmVjMGM4Yzk1MDFjMWM3NTc3MCIsIm5iZiI6MTc4MzI3NDg2NC4wNCwic3ViIjoiNmE0YTlkNzA3OTRkODI1MWIxYzkxMjVkIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9._lpp43NfdDB-I1aj9T5iWE-9x_ImLxENCXPHuhV5eGc' }
+    headers: { accept: 'application/json', Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY }
 };
 export const SUPPORTED_LANGUAGE = [
     {
@@ -32,5 +32,5 @@ export const SUPPORTED_LANGUAGE = [
     },
 ];
 
-
-
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+export const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;

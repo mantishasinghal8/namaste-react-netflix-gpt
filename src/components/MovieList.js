@@ -5,7 +5,6 @@ const MovieList = ({ title, movies }) => {
     const sliderRef = useRef(null);
 
     const scrollLeft = () => {
-        console.log("Clicked");
 
         if (!sliderRef.current) return;
 

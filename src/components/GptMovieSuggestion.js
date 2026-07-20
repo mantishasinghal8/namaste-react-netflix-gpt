@@ -1,12 +1,24 @@
 import { useSelector } from "react-redux";
-import lang from "../utils/languageConstants";
-
+import MovieList from "./MovieList";
 const GptMovieSuggestion = () => {
     const langKey = useSelector((store) => store.config.lang);
+    const { movieNames, movieResults } = useSelector((store) => store.gpt);
+    console.log("movieNames", movieNames);
+    console.log("movieResults", movieResults);
+    if (!movieNames) return null;
 
     return (
         <div className="gptmoviesuggestion">
-            <h1>{lang[langKey].gptMovieSuggestion}</h1>
+            <div className="gptmoviesuggestion-wrapper">
+                {movieNames.map((movieName, index) =>
+                    <MovieList
+                        key={movieName}
+                        title={movieName}
+                        movies={movieResults[index].results}
+                    />
+                )}
+            </div>
+
         </div>
     );
 };

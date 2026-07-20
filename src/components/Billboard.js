@@ -5,9 +5,6 @@ const Billboard = (mainMovie) => {
 
     const { original_title, overview, id } = mainMovie.data;
 
-    console.log(mainMovie.data);
-    console.log(mainMovie.data.id);
-
     return (
         <section className="billboard">
             <div className="billboard-wrapper">

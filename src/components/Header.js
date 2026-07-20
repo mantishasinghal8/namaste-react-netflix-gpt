@@ -30,7 +30,6 @@ const Header = () => {
     const handleLanguageChange = (e) => {
         // const lang = useSelector((store) => store.changLanguage);
 
-        console.log(e.target.value);
 
         dispatch(changeLanguage(e.target.value))
 
@@ -86,7 +85,9 @@ const Header = () => {
                                 {lang.name}
                             </option>)}
                     </select>}
-                    <button className="gpt-search" onClick={handleGptSearchClick}>{showGptSearch ? "HomePage" : "GPT Search"}</button>
+                    {
+                        user && <button className="gpt-search" onClick={handleGptSearchClick}>{showGptSearch ? "HomePage" : "GPT Search"}</button>
+                    }
 
                     {user && <div className="user-account"  >
                         <button className='loggedin-user'>
